@@ -1,7 +1,27 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router';
+import { AuthContext } from '../Provider/AuthProvider';
 
 const Register = () => {
+    const {createUser}=useContext(AuthContext);
+
+    const handleSignUp=e=>{
+        e.preventDefault();
+        const form=e.target;
+        const formData=new FormData(form);
+        const userData=Object.fromEntries(formData.entries());
+        console.log(userData);
+        const email=userData.email;
+        const password=userData.password;
+        console.log(email,password);
+
+        createUser(email,password)
+        .then(result=>{
+            console.log(result.user);
+        })
+
+       form.reset();
+    }
     return (
                 <div className="hero mt-20">
     <div className="card bg-base-100 py-2 w-full max-w-sm shrink-0 shadow-xl">
@@ -9,7 +29,7 @@ const Register = () => {
       <div className="card-body">
 
         {/* form */}
-        <form className="fieldset">
+        <form onSubmit={handleSignUp} className="fieldset">
 
             {/* name */}
           <label className="label">Name</label>
