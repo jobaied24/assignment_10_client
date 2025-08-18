@@ -21,28 +21,46 @@ const Register = () => {
     // password check
     const checkPass = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
     if (checkPass.test(password) == false) {
-      setError('password must have an uppercase, a lowercase and atleast 6 characters')
+      const msg=('password must have an uppercase, a lowercase and atleast 6 characters')
+      setError(msg);
       Swal.fire({
         icon: "error",
         title: "Oops...",
-        text: error,
+        text: msg,
       });
       return;
     }
-    console.log(error);
 
     createUser(email, password)
       .then(result => {
         console.log(result.user);
+        form.reset();
+      })
+      .catch(error=>{
+        const errorCode=error.code;
+        setError(errorCode);
+          Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: errorCode,
+      });
       })
 
-    form.reset();
   }
 
   const handleGoogleSignIn = () => {
     signInGoogle()
       .then(res => {
         console.log(res);
+      })
+      .catch(err=>{
+          const errorCode=err.code;
+        setError(errorCode);
+          Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: errorCode,
+      });
       })
   }
   return (
