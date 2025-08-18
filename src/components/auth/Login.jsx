@@ -3,7 +3,20 @@ import { Link } from 'react-router';
 import { AuthContext } from '../Provider/AuthProvider';
 
 const Login = () => {
-  const {signInGoogle}=useContext(AuthContext);
+  const {signInGoogle,userLogin}=useContext(AuthContext);
+
+  const handleSignIn=(e)=>{
+    e.preventDefault();
+    const form=e.target;
+    const email=form.email.value;
+    const password=form.password.value;
+
+    
+    userLogin(email,password)
+    .then(res=>{
+      console.log(res.user);
+    })
+  }
 
   const handleSignInGoogle=()=>{
     signInGoogle()
@@ -18,7 +31,7 @@ const Login = () => {
       <div className="card-body">
 
         {/* form */}
-        <form className="fieldset">
+        <form onSubmit={handleSignIn} className="fieldset">
             {/* email */}
           <label className="label">Email</label>
           <input type="email" name='email' className="input" placeholder="Email" />
