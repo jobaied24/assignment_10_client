@@ -4,7 +4,7 @@ import illustrator from '../assets//illustrator1.png';
 
 const Home = () => {
     return (
-        <div className=''>
+        <div>
             
             <div>
                 <Banner></Banner>

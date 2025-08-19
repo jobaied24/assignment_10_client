@@ -8,6 +8,10 @@ import Home from './components/Home.jsx'
 import Register from './components/auth/Register.jsx'
 import Login from './components/auth/Login.jsx'
 import AuthProvider from './components/Provider/AuthProvider.jsx'
+import PrivateRoute from './components/PrivateRoute.jsx'
+import AddTask from './components/Task/AddTask.jsx'
+import BrowseTask from './components/Task/BrowseTask.jsx'
+import MyTask from './components/Task/MyTask.jsx'
 
 const router=createBrowserRouter([
   {
@@ -25,6 +29,22 @@ const router=createBrowserRouter([
       {
         path:'/login',
         Component:Login
+      },
+      {
+        path:'/addTask',
+        element:<PrivateRoute>
+            <AddTask></AddTask>
+        </PrivateRoute>
+      },
+      {
+        path:'/browseTask',
+        element:<BrowseTask></BrowseTask>
+      },
+      {
+        path:'/MyTask',
+        element:<PrivateRoute>
+          <MyTask></MyTask>
+        </PrivateRoute>
       }
     ]
   }

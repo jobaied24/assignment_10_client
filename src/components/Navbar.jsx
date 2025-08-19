@@ -6,10 +6,10 @@ import Dropdown from './Dropdown';
 const Navbar = () => {
   const {user}=useContext(AuthContext);
     const link=<>
-     <NavLink>Home</NavLink>
-    <NavLink>Add Task</NavLink>
-    <NavLink>Browse Task</NavLink>
-    <NavLink>My Posted Task</NavLink>
+     <NavLink to='/'>Home</NavLink>
+    <NavLink to='/addTask'>Add Task</NavLink>
+    <NavLink to='/browseTask'>Browse Task</NavLink>
+    <NavLink to='/myTask'>My Posted Task</NavLink>
     </>
     return (
             <div className="navbar bg-base-100 shadow-sm px-10">
