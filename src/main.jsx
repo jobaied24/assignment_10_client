@@ -38,6 +38,7 @@ const router=createBrowserRouter([
       },
       {
         path:'/browseTask',
+        loader:()=>fetch('http://localhost:3000/task'),
         element:<BrowseTask></BrowseTask>
       },
       {
