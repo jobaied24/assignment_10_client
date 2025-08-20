@@ -9,7 +9,7 @@ const Navbar = () => {
      <NavLink to='/'>Home</NavLink>
     <NavLink to='/addTask'>Add Task</NavLink>
     <NavLink to='/browseTask'>Browse Task</NavLink>
-    <NavLink to='/myTask'>My Posted Task</NavLink>
+    <NavLink to={`/myTask/${user?.email || ''}`}>My Posted Task</NavLink>
     </>
     return (
             <div className="navbar bg-base-100 shadow-sm px-10">
