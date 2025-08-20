@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 
 const TaskCard = ({task}) => {
-    const {email,category,title,budget,_id}=task
+    const {category,title,budget,_id}=task
     return (
        <div className="card border-2shadow-lg bg-base-200 text-white">
   <div className="card-body">
