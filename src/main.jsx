@@ -14,6 +14,8 @@ import BrowseTask from './components/Task/BrowseTask.jsx'
 import MyTask from './components/Task/MyTask.jsx'
 import TaskDetails from './components/Task/TaskDetails.jsx'
 import UpdateTask from './components/Task/UpdateTask.jsx'
+import Error from './components/Error.jsx'
+import ErrorCard from './components/ErrorCard.jsx'
 
 const router = createBrowserRouter([
   {
@@ -62,9 +64,19 @@ const router = createBrowserRouter([
         path:'/updateTask/:id',
         loader:({params})=>fetch(`http://localhost:3000/task/${params.id}`),
         element:<PrivateRoute>
-               <UpdateTask></UpdateTask>,
+               <UpdateTask></UpdateTask>
         </PrivateRoute>
 
+      }
+    ]
+  },
+  {
+    path:'*',
+    element:<Error></Error>,
+    children:[
+      {
+        path:'*',
+        element:<ErrorCard></ErrorCard>
       }
     ]
   }
