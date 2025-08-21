@@ -13,6 +13,7 @@ import AddTask from './components/Task/AddTask.jsx'
 import BrowseTask from './components/Task/BrowseTask.jsx'
 import MyTask from './components/Task/MyTask.jsx'
 import TaskDetails from './components/Task/TaskDetails.jsx'
+import UpdateTask from './components/Task/UpdateTask.jsx'
 
 const router = createBrowserRouter([
   {
@@ -59,6 +60,12 @@ const router = createBrowserRouter([
         element: <PrivateRoute>
           <MyTask></MyTask>
         </PrivateRoute>
+      },
+      {
+        path:'/updateTask/:id',
+        loader:({params})=>fetch(`http://localhost:3000/task/${params.id}`),
+        element:<UpdateTask></UpdateTask>,
+
       }
     ]
   }

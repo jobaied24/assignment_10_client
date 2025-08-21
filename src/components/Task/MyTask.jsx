@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router';
+import { Link, useLoaderData } from 'react-router';
 
 const MyTask = () => {
     const taskDataWithEmail = useLoaderData();
@@ -32,7 +32,7 @@ const MyTask = () => {
                                         <div className="flex items-center gap-3">
                                         
                                             <div>
-                                                <div className="font-bold">{task.title}</div>
+                                                <div className="font-bold text-lg">{task.title}</div>
                                                 <div className="text-sm opacity-50">{task.category}</div>
                                             </div>
                                         </div>
@@ -42,8 +42,10 @@ const MyTask = () => {
                                     <td className='font-semibold'>
                                         {task.budget}
                                     </td>
-                                    <th>
-                                        <button className="btn btn-ghost btn-xs">details</button>
+                                    <th className='space-x-2'>
+                                        <Link to={`/updateTask/${task._id}`} className="btn text-white btn-xs">Update</Link>
+                                        <Link className="btn text-white btn-xs">Delete</Link>
+                                        <Link className="btn text-white btn-xs">Bids</Link>
                                     </th>
                                 </tr>
                             )
