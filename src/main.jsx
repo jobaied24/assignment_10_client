@@ -53,10 +53,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/MyTask/:email',
-        loader:({params})=>{
-          console.log( params.email);
-          return  fetch(`http://localhost:3000/task/email/${encodeURIComponent(params.email)}`)
-        },
+        loader:({params})=>fetch(`http://localhost:3000/task/email/${encodeURIComponent(params.email)}`),
         element: <PrivateRoute>
           <MyTask></MyTask>
         </PrivateRoute>
@@ -64,7 +61,9 @@ const router = createBrowserRouter([
       {
         path:'/updateTask/:id',
         loader:({params})=>fetch(`http://localhost:3000/task/${params.id}`),
-        element:<UpdateTask></UpdateTask>,
+        element:<PrivateRoute>
+               <UpdateTask></UpdateTask>,
+        </PrivateRoute>
 
       }
     ]

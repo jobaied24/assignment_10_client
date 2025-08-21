@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLoaderData } from 'react-router';
+import Swal from 'sweetalert2';
 
 const UpdateTask = () => {
     const data=useLoaderData();
@@ -22,6 +23,13 @@ const UpdateTask = () => {
         })
         .then(res=>res.json())
         .then(data=>{
+            if(data.modifiedCount){
+                Swal.fire({
+  title: "Drag me!",
+  icon: "success",
+  draggable: true
+});
+            }
             console.log(data);
         })
     }

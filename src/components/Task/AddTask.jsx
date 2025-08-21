@@ -23,14 +23,16 @@ const AddTask = () => {
     })
       .then(res => res.json())
       .then(data => {
-        if(data.insertedId){
-        Swal.fire({
-          title: "Drag me!",
-          icon: "success",
-          draggable: true
-        });
+        if (data.insertedId) {
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Your work has been saved",
+            showConfirmButton: false,
+            timer: 1500
+          });
         }
-       
+
         console.log(data);
       })
   }
