@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Banner from './Banner';
 import illustrator from '../assets//illustrator1.png';
+import { useLoaderData } from 'react-router';
+import TaskCard from './Task/TaskCard';
 
 const Home = () => {
+    const featuredTask=useLoaderData();
+    const [tasks,setTasks]=useState(featuredTask);
+    console.log(featuredTask);
     return (
         <div>
             
@@ -18,6 +23,12 @@ const Home = () => {
                     </p>
                 </div>
              <img className='w-[450px]' src={illustrator} alt="" />
+            </div>
+
+            <div className='mx-16 mb-10 grid md:grid-cols-3 grid-cols-2 gap-5'>
+                {
+                tasks.map(task=><TaskCard task={task}></TaskCard>)
+                }
             </div>
 
         </div>
