@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React  from 'react';
 import Banner from './Banner';
 import illustrator from '../assets//illustrator1.png';
 import { useLoaderData } from 'react-router';
@@ -6,12 +6,7 @@ import TaskCard from './Task/TaskCard';
 
 const Home = () => {
     const tasks=useLoaderData();
-
-    const sortedTasks=[...tasks].sort(
-        (a,b)=>new Date(a.deadline)-new Date(b.deadline)
-    );
-
-
+    
     return (
         <div>
             
@@ -29,9 +24,9 @@ const Home = () => {
              <img className='w-[450px]' src={illustrator} alt="" />
             </div>
 
-            <div className='mx-16 mb-10 grid md:grid-cols-3 grid-cols-2 gap-5'>
+            <div className='mx-10 my-20 grid md:grid-cols-3 grid-cols-2 gap-5'>
                 {
-                sortedTasks.map(task=><TaskCard task={task}></TaskCard>)
+                tasks.map(task=><TaskCard task={task}></TaskCard>)
                 }
             </div>
 
