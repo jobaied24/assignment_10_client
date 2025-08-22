@@ -5,9 +5,13 @@ import { useLoaderData } from 'react-router';
 import TaskCard from './Task/TaskCard';
 
 const Home = () => {
-    const featuredTask=useLoaderData();
-    const [tasks,setTasks]=useState(featuredTask);
-    console.log(featuredTask);
+    const tasks=useLoaderData();
+
+    const sortedTasks=[...tasks].sort(
+        (a,b)=>new Date(a.deadline)-new Date(b.deadline)
+    );
+
+
     return (
         <div>
             
@@ -27,9 +31,10 @@ const Home = () => {
 
             <div className='mx-16 mb-10 grid md:grid-cols-3 grid-cols-2 gap-5'>
                 {
-                tasks.map(task=><TaskCard task={task}></TaskCard>)
+                sortedTasks.map(task=><TaskCard task={task}></TaskCard>)
                 }
             </div>
+
 
         </div>
     );
