@@ -5,7 +5,7 @@ import Swal from 'sweetalert2';
 const UpdateTask = () => {
     const data=useLoaderData();
     console.log(data);
-        const {name,email,title,category,deadline,description,budget}=data;
+        const {name,email,_id,title,category,deadline,description,budget}=data;
 
 
     const handleUpdateTask=e=>{
@@ -68,13 +68,13 @@ const UpdateTask = () => {
             {/* Name  */}
             <fieldset className="fieldset grid md:grid-cols bg-gray-300 border-base-300 rounded-box border p-4">
               <label className="label text-gray-600">Name </label>
-              <input type="text" name='name' value={data.name} className="input w-full" placeholder="Name" />
+              <input type="text" name='name' value={name} className="input w-full" placeholder="Name" />
             </fieldset>
 
             {/* Email */}
             <fieldset className="fieldset grid md:grid-cols bg-gray-300 border-base-300 rounded-box border p-4">
               <label className="label text-gray-600"> Email</label>
-              <input type="email" name='email' value={data.email} className="input w-full" placeholder=" Email" />
+              <input type="email" name='email' value={email} className="input w-full" placeholder=" Email" />
             </fieldset>
 
           </div>

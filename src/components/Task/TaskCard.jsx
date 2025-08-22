@@ -6,7 +6,7 @@ const TaskCard = ({task}) => {
     return (
        <div className="card border-2shadow-lg bg-base-200 text-white">
   <div className="card-body">
-    <h2 className="card-title font-bold text-2xl">Task Title: {title}</h2>
+    <h2 className="card-title font-bold text-2xl">Title: {title}</h2>
     <h2 className="text-lg">Category: {category}</h2>
     <h2 className="text-lg">Budget: {budget}</h2>
     <h2>Deadline: {deadline}</h2>
