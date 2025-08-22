@@ -9,7 +9,6 @@ const Home = () => {
     
     return (
         <div>
-            
             <div>
                 <Banner></Banner>
             </div>

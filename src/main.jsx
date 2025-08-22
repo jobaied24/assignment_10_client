@@ -16,6 +16,7 @@ import TaskDetails from './components/Task/TaskDetails.jsx'
 import UpdateTask from './components/Task/UpdateTask.jsx'
 import Error from './components/Error.jsx'
 import ErrorCard from './components/ErrorCard.jsx'
+import Loading from './components/Loading.jsx'
 
 const router = createBrowserRouter([
   {
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        loader:()=>fetch(`http://localhost:3000/task?limit=6`),
+        loader: () => fetch(`http://localhost:3000/task?limit=6`),
         Component: Home
       },
       {
@@ -37,47 +38,45 @@ const router = createBrowserRouter([
       },
       {
         path: '/addTask',
-        element: <PrivateRoute>
+        Component:()=>(<PrivateRoute>
           <AddTask></AddTask>
-        </PrivateRoute>
+        </PrivateRoute>)
       },
       {
         path: '/browseTask',
         loader: () => fetch('http://localhost:3000/task'),
-        element: <BrowseTask></BrowseTask>
+        Component: BrowseTask,
       },
       {
         path: '/taskDetails/:id',
-        loader:({params})=>fetch(`http://localhost:3000/task/${params.id}`),
-        element: <PrivateRoute>
+        loader: ({ params }) => fetch(`http://localhost:3000/task/${params.id}`),
+        Component:()=>(<PrivateRoute>
           <TaskDetails></TaskDetails>
-        </PrivateRoute>
-
+        </PrivateRoute>),
       },
       {
         path: '/MyTask/:email',
-        loader:({params})=>fetch(`http://localhost:3000/task/email/${encodeURIComponent(params.email)}`),
-        element: <PrivateRoute>
+        loader: ({ params }) => fetch(`http://localhost:3000/task/email/${encodeURIComponent(params.email)}`),
+        Component:()=>(<PrivateRoute>
           <MyTask></MyTask>
-        </PrivateRoute>
+        </PrivateRoute>),
       },
       {
-        path:'/updateTask/:id',
-        loader:({params})=>fetch(`http://localhost:3000/task/${params.id}`),
-        element:<PrivateRoute>
-               <UpdateTask></UpdateTask>
-        </PrivateRoute>
-
+        path: '/updateTask/:id',
+        loader: ({ params }) => fetch(`http://localhost:3000/task/${params.id}`),
+        Component:()=>(<PrivateRoute>
+          <UpdateTask></UpdateTask>
+        </PrivateRoute>),
       }
     ]
   },
   {
-    path:'*',
-    element:<Error></Error>,
-    children:[
+    path: '*',
+    Component: Error,
+    children: [
       {
-        path:'*',
-        element:<ErrorCard></ErrorCard>
+        path: '*',
+        Component:ErrorCard
       }
     ]
   }
