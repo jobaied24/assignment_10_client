@@ -13,25 +13,25 @@ const Home = () => {
                 <Banner></Banner>
             </div>
 
-            <div className='my-16 flex justify-center items-center'>
+            <div className='md:my-16 my-10 mx-4 md:mx-10 md:flex justify-center items-center'>
                 <div>
-                    <h1 className='text-6xl font-bold'>Get work done <br />  with top freelance talent.</h1>
-                    <p className="mt-4 text-lg text-blue-900">
+                    <h1 className='text-4xl md:text-6xl font-bold'>Get work done <br />  with top freelance talent.</h1>
+                    <p className="mt-4 md:text-lg text-blue-900">
                         Hire experts. Save time. Grow your business.
                     </p>
                 </div>
              <img className='w-[450px]' src={illustrator} alt="" />
             </div>
 
-            <div className='mx-10 my-20 grid md:grid-cols-3 grid-cols-2 gap-5'>
+            <div className='mx-6 md:mx-10 md:my-20 my-14 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5'>
                 {
-                tasks.map(task=><TaskCard task={task}></TaskCard>)
+                tasks.map(task=><TaskCard key={task._id} task={task}></TaskCard>)
                 }
             </div>
 
-            <div className='mx-10 my-24'>
-                <h2 className='text-5xl mb-10 font-bold text-center'>Key Features</h2>
-                <div className=' grid lg:grid-cols-3 md:grid-cols-2 gap-7'>
+            <div className='mx-6 md:mx-10 md:my-24 my-20'>
+                <h2 className='text-4xl md:text-5xl mb-10 md:mb-5 font-bold text-center'>Key Features</h2>
+                <div className=' grid lg:grid-cols-3 gap-7'>
                        
                         <div className="p-10 text-center shadow rounded-xl hover:text-white border-2 border-[#401561] hover:bg-base-200 hover:scale-105 transition transform ease-in-out  duration-300">
       <h3 className="text-2xl font-semibold mb-5">Secure Payments</h3>

@@ -12,7 +12,7 @@ const Navbar = () => {
     <NavLink to={`/myTask/${user?.email}`}>My Posted Task</NavLink>
     </>
     return (
-            <div className="navbar bg-base-100 shadow-sm px-10">
+            <div className="navbar bg-base-100 shadow-sm md:px-10 px-5">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -26,7 +26,7 @@ const Navbar = () => {
        }
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">BEWORK</a>
+    <a className="btn hidden lg:btn-ghost lg:inline-flex text-xl">BEWORK</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal gap-10 px-1">
@@ -37,7 +37,7 @@ const Navbar = () => {
 
     {
       user ? <Dropdown></Dropdown> :
-      <div className='flex gap-4'>
+      <div className='flex gap-3 md:gap-4'>
     <Link to='/login' className="btn text-base-100">Login</Link>
     <Link to='/register' className="btn text-base-100">Sign Up</Link>
         </div>

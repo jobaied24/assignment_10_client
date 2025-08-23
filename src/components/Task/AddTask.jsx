@@ -14,7 +14,7 @@ const AddTask = () => {
     const taskData = Object.fromEntries(formData.entries());
     console.log(taskData);
 
-    fetch('http://localhost:3000/task', {
+    fetch('https://assignment-10-server-two-pink.vercel.app/task', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

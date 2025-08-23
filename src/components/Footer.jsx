@@ -6,8 +6,8 @@ import { FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
     return (
-        <div className='px-10 py-5 bg-[#240c3b] text-base-100'>
-           <div className='my-6 grid grid-cols-3 gap-24'>
+        <div className='md:px-10 px-6 py-5 bg-[#240c3b] text-base-100'>
+           <div className='my-6 grid md:grid-cols-3 grid-cols-1 md:gap-24 gap-16'>
             
                 {/* contact */}
             <div className='space-y-3'>

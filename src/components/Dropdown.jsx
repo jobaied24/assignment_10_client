@@ -19,7 +19,7 @@ const Dropdown = () => {
     return (
         <div className="dropdown dropdown-bottom dropdown-hover dropdown-end">
             <div tabIndex={0} role="button" className=" m-1">
-                <img className='w-12 rounded-full' src={user.photoURL}></img>
+                <img className='w-8 md:w-12 rounded-full' src={user.photoURL}></img>
             </div>
             <ul tabIndex={0} className="dropdown-content menu bg-base-200 text-base-100 rounded-box z-1 w-52 mt-2 py-3 gap-2 shadow-lg">
                 <li className='mx-auto font-semibold text-lg'>{user.displayName}</li>

@@ -25,7 +25,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        loader: () => fetch(`http://localhost:3000/task?limit=6`),
+        loader: () => fetch(`https://assignment-10-server-two-pink.vercel.app/task?limit=6`),
         Component: Home
       },
       {
@@ -44,26 +44,26 @@ const router = createBrowserRouter([
       },
       {
         path: '/browseTask',
-        loader: () => fetch('http://localhost:3000/task'),
+        loader: () => fetch('https://assignment-10-server-two-pink.vercel.app/task'),
         Component: BrowseTask,
       },
       {
         path: '/taskDetails/:id',
-        loader: ({ params }) => fetch(`http://localhost:3000/task/${params.id}`),
+        loader: ({ params }) => fetch(`https://assignment-10-server-two-pink.vercel.app/task/${params.id}`),
         Component:()=>(<PrivateRoute>
           <TaskDetails></TaskDetails>
         </PrivateRoute>),
       },
       {
         path: '/MyTask/:email',
-        loader: ({ params }) => fetch(`http://localhost:3000/task/email/${encodeURIComponent(params.email)}`),
+        loader: ({ params }) => fetch(`https://assignment-10-server-two-pink.vercel.app/task/email/${encodeURIComponent(params.email)}`),
         Component:()=>(<PrivateRoute>
           <MyTask></MyTask>
         </PrivateRoute>),
       },
       {
         path: '/updateTask/:id',
-        loader: ({ params }) => fetch(`http://localhost:3000/task/${params.id}`),
+        loader: ({ params }) => fetch(`https://assignment-10-server-two-pink.vercel.app/task/${params.id}`),
         Component:()=>(<PrivateRoute>
           <UpdateTask></UpdateTask>
         </PrivateRoute>),

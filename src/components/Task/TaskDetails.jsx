@@ -13,7 +13,7 @@ const TaskDetails = () => {
           bids : newBids
         }
       console.log(bid)
-        fetch(`http://localhost:3000/task/${_id}`,{
+        fetch(`https://assignment-10-server-two-pink.vercel.app/task/${_id}`,{
           method:'PATCH',
           headers:{
             'Content-Type':'application/json'

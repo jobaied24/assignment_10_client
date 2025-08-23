@@ -18,7 +18,7 @@ const MyTask = () => {
   confirmButtonText: "Yes, delete it!"
 }).then((result) => {
   if (result.isConfirmed) {
-            fetch(`http://localhost:3000/task/${id}`,{
+            fetch(`https://assignment-10-server-two-pink.vercel.app/task/${id}`,{
             method:'DELETE'
         })
         .then(res=>res.json())
@@ -40,7 +40,7 @@ const MyTask = () => {
 
     }
     return (
-        <div className='mx-10'>
+        <div className='mx-4 lg:mx-10 md:mx-6'>
             <h1 className='mt-10 mb-6 text-center text-4xl font-bold '>My Posted Task</h1>
 
             <div className="overflow-x-auto">
@@ -48,9 +48,9 @@ const MyTask = () => {
                     {/* head */}
                     <thead>
                         <tr>
-                            <th>No.</th>
+                            <th className="hidden lg:table-cell">No.</th>
                             <th>Task title</th>
-                            <th>Deadline</th>
+                            <th className="hidden md:table-cell">Deadline</th>
                             <th>Budget</th>
                             <th></th>
                         </tr>
@@ -60,7 +60,7 @@ const MyTask = () => {
                         {
                             tasks.map((task,index)=>
                                 <tr key={task._id}>
-                                    <th>
+                                    <th className="hidden lg:table-cell">
                                       {index+1}
                                     </th>
                                     <td>
@@ -73,11 +73,11 @@ const MyTask = () => {
                                         </div>
                                     </td>
                                     
-                                    <td className='font-semibold'>{task.deadline}</td>
+                                    <td className='font-semibold hidden md:table-cell'>{task.deadline}</td>
                                     <td className='font-semibold'>
                                         {task.budget}
                                     </td>
-                                    <th className='space-x-2'>
+                                    <th className='space-x-2 space-y-1'>
                                         <Link to={`/updateTask/${task._id}`} className="btn text-white btn-xs">Update</Link>
                                         <Link onClick={()=>handleDeleteTask(task._id)} className="btn text-white btn-xs">Delete</Link>
                                         <Link className="btn text-white btn-xs">Bids</Link>

@@ -26,8 +26,8 @@ const Banner = () => {
       {/* slide-1 */}
       <SwiperSlide>
         <div className='relative'>
-             <img className='w-full h-[500px] object-cover' src={slide1}></img>
-               <h2 className="absolute inset-0 flex flex-col text-4xl md:text-6xl font-bold items-center justify-center text-white bg-black/40">
+             <img className='w-full md:h-[500px] h-[350px] object-cover' src={slide1}></img>
+               <h2 className="px-2 absolute inset-0 flex flex-col text-4xl md:text-6xl font-bold items-center justify-center text-white bg-black/40">
       Grow Your Business Faster</h2>
         </div>
         </SwiperSlide>
@@ -35,8 +35,8 @@ const Banner = () => {
       {/* slide-2 */}
       <SwiperSlide>
         <div className='relative'>
-             <img className='w-full h-[500px] object-cover' src={slide2}></img>
-               <h2 className="absolute inset-0 flex flex-col text-4xl md:text-6xl font-bold items-center justify-center text-white bg-black/40">
+             <img className='w-full md:h-[500px] h-[350px] object-cover' src={slide2}></img>
+               <h2 className="px-2 absolute inset-0 flex flex-col text-4xl md:text-6xl font-bold items-center justify-center text-white bg-black/40">
       Your Business, Our Talent</h2>
         </div>
         </SwiperSlide>
@@ -44,8 +44,8 @@ const Banner = () => {
       {/* slide-3 */}
       <SwiperSlide>
         <div className='relative'>
-             <img className='w-full h-[500px] object-cover' src={slide3}></img>
-               <h2 className="absolute inset-0 flex flex-col text-4xl md:text-6xl font-bold items-center justify-center text-white bg-black/40">
+             <img className='w-full md:h-[500px] h-[350px] object-cover' src={slide3}></img>
+               <h2 className="px-2 absolute inset-0 flex flex-col text-4xl md:text-6xl font-bold items-center justify-center text-white bg-black/40">
       Hire Experts, Save Time</h2>
         </div>
         </SwiperSlide>
