@@ -18,11 +18,9 @@ const Login = () => {
     userLogin(email,password)
     .then(res=>{
  const email = res.user?.email;
-      //  console.log(email)
       let redirectPath = location.state || '/';
 
       if (redirectPath.startsWith('/myTask')) {
-        // force correct path with email
         redirectPath = `/myTask/${encodeURIComponent(email)}`;
       }
 
@@ -34,11 +32,9 @@ const Login = () => {
     signInGoogle()
     .then(res=>{
        const email = res.user?.email;
-      //  console.log(email)
       let redirectPath = location.state || '/';
 
       if (redirectPath.startsWith('/myTask')) {
-        // force correct path with email
         redirectPath = `/myTask/${encodeURIComponent(email)}`;
       }
 

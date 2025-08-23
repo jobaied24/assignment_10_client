@@ -28,7 +28,7 @@ const Banner = () => {
       <SwiperSlide>
         <div className='relative'>
              <img className='w-full md:h-[500px] h-[350px] object-cover' src={slide1}></img>
-               <h2 className="px-2 absolute inset-0 flex flex-row text-4xl md:text-6xl font-bold items-center justify-center text-white bg-black/40">
+               <h2 className="px-2 absolute inset-0 flex lg:flex-row flex-col text-4xl md:text-6xl font-bold items-center justify-center text-white bg-black/40">
       Grow Your 
        <span style={{ color: 'white', fontWeight: 'bold' }}>
           {/* Style will be inherited from the parent element */}
@@ -50,7 +50,7 @@ const Banner = () => {
       <SwiperSlide>
         <div className='relative'>
              <img className='w-full md:h-[500px] h-[350px] object-cover' src={slide2}></img>
-               <h2 className="px-2 absolute inset-0 flex flex-row text-4xl md:text-6xl font-bold items-center justify-center text-white bg-black/40">
+               <h2 className="px-2 absolute inset-0 flex lg:flex-row flex-col text-4xl md:text-6xl font-bold items-center justify-center text-white bg-black/40">
       Your Business,
        <span style={{ color: 'white', fontWeight: 'bold' }}>
           {/* Style will be inherited from the parent element */}
@@ -72,7 +72,7 @@ const Banner = () => {
       <SwiperSlide>
         <div className='relative'>
              <img className='w-full md:h-[500px] h-[350px] object-cover' src={slide3}></img>
-               <h2 className="px-2 absolute inset-0 flex flex-row text-4xl md:text-6xl font-bold items-center justify-center text-white bg-black/40">
+               <h2 className="px-2 absolute inset-0 flex lg:flex-row flex-col text-4xl md:text-6xl font-bold items-center justify-center text-white bg-black/40">
       Hire Experts,
         <span style={{ color: 'white', fontWeight: 'bold' }}>
           {/* Style will be inherited from the parent element */}

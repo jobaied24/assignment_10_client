@@ -1,13 +1,14 @@
-import React  from 'react';
+import React from 'react';
 import Banner from './Banner';
 import illustrator from '../assets//illustrator1.png';
 import { useLoaderData } from 'react-router';
 import TaskCard from './Task/TaskCard';
+import { Fade } from "react-awesome-reveal";
 
 
 const Home = () => {
-    const tasks=useLoaderData();
-    
+    const tasks = useLoaderData();
+
     return (
         <div>
             <div>
@@ -16,38 +17,44 @@ const Home = () => {
 
             <div className='md:my-16 my-10 mx-4 md:mx-10 md:flex justify-center items-center'>
                 <div>
-                    <h1 className='text-4xl md:text-6xl font-bold'>Get work done <br />  with top freelance talent.</h1>
-                    <p className="mt-4 md:text-lg text-blue-900">
-                        Hire experts. Save time. Grow your business.
-                    </p>
+                    <Fade cascade
+                        duration={1500}
+                        fraction={0.5}
+                        damping={0.2}>
+                        <h1 className='text-4xl md:text-6xl font-bold'>Get work done <br />  with top freelance talent.</h1>
+                        <p className="mt-4 md:text-lg text-blue-900">
+                            Hire experts. Save time. Grow your business.
+                        </p>
+                    </Fade>
+
                 </div>
-             <img className='w-[450px]' src={illustrator} alt="" />
+                <img className='w-[450px]' src={illustrator} alt="" />
             </div>
 
             <div className='mx-6 md:mx-10 md:my-20 my-14 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5'>
                 {
-                tasks.map(task=><TaskCard key={task._id} task={task}></TaskCard>)
+                    tasks.map(task => <TaskCard key={task._id} task={task}></TaskCard>)
                 }
             </div>
 
             <div className='mx-6 md:mx-10 md:my-24 my-20'>
                 <h2 className='text-4xl md:text-5xl mb-10 md:mb-5 font-bold text-center'>Key Features</h2>
                 <div className=' grid lg:grid-cols-3 gap-7'>
-                       
-                        <div className="p-10 text-center shadow rounded-xl hover:text-white border-2 border-[#401561] hover:bg-base-200 hover:scale-105 transition transform ease-in-out  duration-300">
-      <h3 className="text-2xl font-semibold mb-5">Secure Payments</h3>
-      <p>Your money is safe with us. Payments are released only when work is approved.</p>
-    </div>
 
-                        <div className="p-10 text-center shadow rounded-xl hover:text-white border-2 border-[#401561] hover:bg-base-200 hover:scale-105 transition transform ease-in-out  duration-300">
-      <h3 className="text-2xl font-semibold mb-5">Verified Freelancers</h3>
-      <p>Work with trusted freelancers who are reviewed and verified by our team.</p>
-    </div>
-                        <div className="p-10 text-center shadow rounded-xl hover:text-white border-2 border-[#401561] hover:bg-base-200 hover:scale-105 transition transform ease-in-out  duration-300">
-      <h3 className="text-2xl font-semibold mb-5">Fast Delivery</h3>
-      <p>Save time by hiring freelancers who deliver high-quality work quickly.</p>
-    </div>
-                        
+                    <div className="p-10 text-center shadow rounded-xl hover:text-white border-2 border-[#401561] hover:bg-base-200 hover:scale-105 transition transform ease-in-out  duration-300">
+                        <h3 className="text-2xl font-semibold mb-5">Secure Payments</h3>
+                        <p>Your money is safe with us. Payments are released only when work is approved.</p>
+                    </div>
+
+                    <div className="p-10 text-center shadow rounded-xl hover:text-white border-2 border-[#401561] hover:bg-base-200 hover:scale-105 transition transform ease-in-out  duration-300">
+                        <h3 className="text-2xl font-semibold mb-5">Verified Freelancers</h3>
+                        <p>Work with trusted freelancers who are reviewed and verified by our team.</p>
+                    </div>
+                    <div className="p-10 text-center shadow rounded-xl hover:text-white border-2 border-[#401561] hover:bg-base-200 hover:scale-105 transition transform ease-in-out  duration-300">
+                        <h3 className="text-2xl font-semibold mb-5">Fast Delivery</h3>
+                        <p>Save time by hiring freelancers who deliver high-quality work quickly.</p>
+                    </div>
+
                 </div>
             </div>
 
