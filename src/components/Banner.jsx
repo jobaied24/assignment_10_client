@@ -10,6 +10,7 @@ import 'swiper/css/pagination';
 import slide1 from '../assets/bework1.jpg';
 import slide2 from '../assets/bework2.jpg';
 import slide3 from '../assets/bework3.jpg';
+import { Typewriter } from 'react-simple-typewriter'
 
 const Banner = () => {
     return (
@@ -27,8 +28,21 @@ const Banner = () => {
       <SwiperSlide>
         <div className='relative'>
              <img className='w-full md:h-[500px] h-[350px] object-cover' src={slide1}></img>
-               <h2 className="px-2 absolute inset-0 flex flex-col text-4xl md:text-6xl font-bold items-center justify-center text-white bg-black/40">
-      Grow Your Business Faster</h2>
+               <h2 className="px-2 absolute inset-0 flex flex-row text-4xl md:text-6xl font-bold items-center justify-center text-white bg-black/40">
+      Grow Your 
+       <span style={{ color: 'white', fontWeight: 'bold' }}>
+          {/* Style will be inherited from the parent element */}
+          <Typewriter
+            words={[' Business Faster']}
+            loop={0}
+            cursor
+            cursorStyle='|'
+            typeSpeed={80}
+            deleteSpeed={60}
+            delaySpeed={1500}
+          />
+        </span>
+      </h2>
         </div>
         </SwiperSlide>
 
@@ -36,8 +50,21 @@ const Banner = () => {
       <SwiperSlide>
         <div className='relative'>
              <img className='w-full md:h-[500px] h-[350px] object-cover' src={slide2}></img>
-               <h2 className="px-2 absolute inset-0 flex flex-col text-4xl md:text-6xl font-bold items-center justify-center text-white bg-black/40">
-      Your Business, Our Talent</h2>
+               <h2 className="px-2 absolute inset-0 flex flex-row text-4xl md:text-6xl font-bold items-center justify-center text-white bg-black/40">
+      Your Business,
+       <span style={{ color: 'white', fontWeight: 'bold' }}>
+          {/* Style will be inherited from the parent element */}
+          <Typewriter
+            words={[' Our Talent']}
+            loop={0}
+            cursor
+            cursorStyle='|'
+            typeSpeed={80}
+            deleteSpeed={60}
+            delaySpeed={1500}
+          />
+        </span>
+      </h2>
         </div>
         </SwiperSlide>
 
@@ -45,8 +72,21 @@ const Banner = () => {
       <SwiperSlide>
         <div className='relative'>
              <img className='w-full md:h-[500px] h-[350px] object-cover' src={slide3}></img>
-               <h2 className="px-2 absolute inset-0 flex flex-col text-4xl md:text-6xl font-bold items-center justify-center text-white bg-black/40">
-      Hire Experts, Save Time</h2>
+               <h2 className="px-2 absolute inset-0 flex flex-row text-4xl md:text-6xl font-bold items-center justify-center text-white bg-black/40">
+      Hire Experts,
+        <span style={{ color: 'white', fontWeight: 'bold' }}>
+          {/* Style will be inherited from the parent element */}
+          <Typewriter
+            words={[' Save Time']}
+            loop={0}
+            cursor
+            cursorStyle='|'
+            typeSpeed={80}
+            deleteSpeed={60}
+            delaySpeed={1500}
+          />
+        </span>
+      </h2>
         </div>
         </SwiperSlide>
     </Swiper>
