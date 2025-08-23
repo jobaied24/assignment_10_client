@@ -17,17 +17,33 @@ const Login = () => {
     
     userLogin(email,password)
     .then(res=>{
-      navigate(`${location.state ? location.state : '/'}`)
-      console.log(res.user);
+ const email = res.user?.email;
+      //  console.log(email)
+      let redirectPath = location.state || '/';
+
+      if (redirectPath.startsWith('/myTask')) {
+        // force correct path with email
+        redirectPath = `/myTask/${encodeURIComponent(email)}`;
+      }
+
+      navigate(redirectPath);
     })
   }
 
   const handleSignInGoogle=()=>{
     signInGoogle()
     .then(res=>{
-      console.log(location.state)
-       navigate(`${location.state ? location.state : '/'}`)
-      console.log(res.user);
+       const email = res.user?.email;
+      //  console.log(email)
+      let redirectPath = location.state || '/';
+
+      if (redirectPath.startsWith('/myTask')) {
+        // force correct path with email
+        redirectPath = `/myTask/${encodeURIComponent(email)}`;
+      }
+
+      navigate(redirectPath);
+  
     })
   }
     return (

@@ -9,9 +9,11 @@ const Dropdown = () => {
         userSignOut()
             .then(() => {
                 Swal.fire({
-                    title: "Logout successfully",
+                    position: "top-end",
                     icon: "success",
-                    draggable: true
+                    title: "signout successfully",
+                    showConfirmButton: false,
+                    timer: 1500
                 });
             })
     }
